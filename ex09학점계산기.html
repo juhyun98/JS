@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 국어, 영어, 수학 점수를 입력받은 후, 총점과 평균을 출력
+
+        // 학점 범위
+        // 100~95점: A+학점 | 95~90점: A학점 | 90~85점: B+학점 | 85~80점: B학점 | 이외 F학점
+
+        let korean = parseInt(prompt('국어 점수'));
+        let english = parseInt(prompt('영어 점수'));
+        let math = parseInt(prompt('수학 점수'));
+
+        let score = korean + english + math; 
+        let grade = score / 3; 
+        // console.log(score);
+
+        if (grade >= 95) {
+            console.log('총점:',score,'점');
+            console.log('평균:', score / 3, '점')
+            console.log('A+학점');
+        }else if (grade >= 90) {
+            console.log('총점:',score,'점');
+            console.log('평균:', score / 3, '점')
+            console.log('A학점');
+        }else if (grade >= 85) {
+            console.log('총점:',score,'점');
+            console.log('평균:', score / 3, '점')
+            console.log('B+학점');
+        }else if (grade >= 80) {
+            console.log('총점:',score,'점');
+            console.log('평균:', score / 3, '점')
+            console.log('B학점');
+        }else {
+            console.log('총점:',score,'점');
+            console.log('평균:', score / 3, '점')
+            console.log('F학점');
+        }
+
+    </script>
+</body>
+</html>
