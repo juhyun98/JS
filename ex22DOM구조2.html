@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>김밥</li>
+        <li>라면</li>
+        <li>떡볶이</li>
+    </ul>
+
+    <script>
+        // NodeList는 웹 페이지의 HTML 문서 내에서 선택한 요서 뿐만 아니라, 텍스트, 주석, 속성 등의
+        // 모든 노드를 문서 내 정렬된 순서대로 모아둔 집합
+        // docuent.queryselectorAll() -> NodeList 객체를 반환한다
+
+        const liElments = document.querySelectorAll('li');
+        console.log(liElements);
+
+        // for문 적용
+        for(let i = 0; i < liElments.length; i++) {
+            console.log(liElments[i].textContent);;
+        }
+
+
+
+    </script>
+</body>
+</html>
