@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let num1 = parseInt(prompt('첫 번째 숫자 입력 : '));
+        let num2 = parseInt(prompt('두 번째 숫자 입력 : '));
+        let cal = prompt('연산할 기호 입력 : ');
+
+        function calculate(num1,num2,cal){
+            if(cal === '+'){
+                console.log(num1+num2);
+            }else if(cal === '-'){
+                console.log(num1-num2);
+            }else if(cal === '*'){
+                console.log(num1*num2);
+            }else if(cal === '/'){
+                console.log(num1/num2);
+            }else{
+                console.log('잘못된 연산자 입력');
+            }
+        }
+
+        calculate(num1,num2,cal);
+    </script>
+</body>
+</html>
