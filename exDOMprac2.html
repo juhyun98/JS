@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://i.ytimg.com/vi/wPFCHgKTDz8/maxresdefault.jpg" width="300px" id="imgId" class="imgClass">
+    <br>
+    <button onclick="imgChange()">이미지 변경</button>
+    <script>
+        // <img> 태그의 src 속성은 이미지 소스를 명시
+        let src1 = "https://i.ytimg.com/vi/wPFCHgKTDz8/maxresdefault.jpg";
+        let src2 = "https://newsimg.sedaily.com/2022/10/21/26CFPO3MM0_1.jpg";
+        let src3 = "https://image.ytn.co.kr/osen/2021/11/c43fe7e5-bb45-460f-b610-c0f8721a9e0b.jpg";
+
+        const imgChange = () => {
+            // 이미지요소 가져오고
+            let img = document.getElementById('imgId');
+            img = document.getElementsByClassName('imgClass')[0];
+            img = document.querySelector('img');
+            img = document.querySelector('#imgId');
+            img = document.querySelector('.imgClass');
+            // src속성을 비교해서
+            if(img.src === src1){
+                img.src = src2;
+            }else if(img.src === src2){
+                img.src = src1;
+            }
+        }
+
+    </script>
+</body>
+</html>
