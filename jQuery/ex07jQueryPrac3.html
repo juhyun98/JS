@@ -18,9 +18,94 @@
         const btnList = ['가위', '바위', '보'];
 
         $(document).on('click', 'button', (e) => {
-            console.log($(e.target).text(e));
+            // (e)는 이벤트 객체가 발생했을 때 해당 이벤트에 대한 정보를 담고 있는 객체
+            console.log($(e.target).text());
+            // e.target은 이벤트가 실제로 발생한 요소를 확인
 
-            $('.user').text('e.')
+            // STEP 1: 버튼 클릭 시 사용자 선택 텍스트 표시하기
+            // 변수에 담아서 사용을 해보자
+            const userChoice = ($(e.target).text());
+            $('.user').text(userChoice);
+
+            // STEP 2: 0 ~ 2까지의 난수 만들기 0 < Math.random() < 1
+            // 변수에 담아서 사용
+            const ranNum = btnList[Math.floor(Math.random() * 3)];
+
+            // STEP 3: 컴퓨터의 선택 텍스트 표시하기
+            // 변수에 담아서 사용
+            const comChoice = btnList[ranNum];
+            $('.com').text(comChoice);
+
+            // STEP 4: STEP1에서 사용한 텍스트를 switch문을 통해 값을 할당
+            // 인덱스를 비교하기 위해 let userNum = 0;
+            // 클릭했을때 받았던 값을 switch문 안에 있는 값에 대입
+            // ex) case '가위' : userNum = 0; break;
+            let userNum = 0;
+            switch($(e.target).text()) {
+                case '가위' : userNum = 0; break;
+                case '바위' : userNum = 1; break;
+                case '보' : userNum = 2; break;
+            }
+
+            // STEP 5: 조건문을 사용하여 내가 낸 수(변수)와 컴퓨터 수(변수) 비교
+            let result = '';
+
+            if (userNum == ranNum){
+                result = '무승부'
+            }else if (userNum == 0){
+                if (ranNum == 1){
+                    result = '컴퓨터 승리';
+                }else{
+                    result = '나의 승리';
+                }
+            } else if (userNum == 1) {
+                if (ranNum == 2) {
+                    result = '컴퓨터 승리';
+                } else {
+                    result = '나의 승리';
+                }
+            } else if (userNum == 2) {
+                if (ranNum == 0) {
+                    result = '컴퓨터 승리';
+                } else {
+                    result = '나의 승리';
+                }
+            }
+
+            // STEP 6: 결과를 화면에 출력
+
+            // 사용자가 선택한 가위, 바위, 보
+            // let userChoice = $(e.target).text();
+
+            // // 컴퓨터가 무작위로 선택한 가위, 바위, 보
+            // let computerChoice = btnList[Math.floor(Math.random() * 3)];
+
+            // // 컴퓨터의 선택 결과를 화면에 표시
+            // $('.com').text(computerChoice);
+
+            // // 사용자의 선택 결과를 화면에 표시
+            // $('.user').text(userChoice);
+
+            // // 결과 계산 및 표시
+            // let result;
+            // switch (userChoice) {
+            //     case '가위':
+            //         result = (computerChoice === '가위') ? '비김' : (computerChoice === '바위') ? '컴퓨터 승리' : '사용자 승리';
+            //         break;
+            //     case '바위':
+            //         result = (computerChoice === '바위') ? '비김' : (computerChoice === '보') ? '컴퓨터 승리' : '사용자 승리';
+            //         break;
+            //     case '보':
+            //         result = (computerChoice === '보') ? '비김' : (computerChoice === '가위') ? '컴퓨터 승리' : '사용자 승리';
+            //         break;
+            //     default:
+            //         result = '게임 오류';
+            // }
+
+            // // 결과를 화면에 표시
+            // $('.result').text(result);
+
+
         })
 
 
